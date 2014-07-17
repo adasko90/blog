@@ -1,0 +1,11 @@
+%h1 Dodaj Post
+- if @post.errors.present?
+  - @post.errors.full_messages.each do |err|
+    %li= err
+= form_for(@post) do |f|
+  = f.label :title
+  = f.text_field :title
+  %br
+  = f.label :content
+  = f.text_area :content
+  = f.submit 'Dodaj!'

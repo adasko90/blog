@@ -1,0 +1,12 @@
+<% if current_user %>
+	<h1>Siema, <%= current_user.email %></h1>
+	<h1>Twoje id to: <%= current_user.id %></h1>
+	<br>
+	<%= link_to "wyloguj się", destroy_user_session_path, method: :delete %>
+
+<% else %>
+	<h1>Siema, nieznajomy!</h1>
+	<%= link_to "zarejstruj się", new_user_registration_path %>
+	<br>
+	<%= link_to "zaloguj się", new_user_session_path %>
+<% end %>

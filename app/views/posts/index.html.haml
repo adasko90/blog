@@ -1,0 +1,19 @@
+%h1 Lista Postów:
+
+%ul
+	-@posts.each do |post|
+		%li
+			=post.title
+			%br 
+			id: 
+			=post.id
+			%br
+			user id:
+			=post.user.id
+			=link_to "Zobacz", post_path(post.id), method: :get
+			=link_to "Edytuj", edit_post_path(post.id), method: :get
+			=link_to "Usuń", post_path(post.id), method: :delete
+
+= link_to "Dodaj Post", new_post_path 
+%br
+= link_to "Home", root_path
