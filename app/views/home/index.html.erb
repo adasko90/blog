@@ -4,6 +4,7 @@
 	<br>
 	<%= link_to "Wyloguj się", destroy_user_session_path, method: :delete %>
 	<%= link_to "Przejrzyj Posty", posts_path, method: :get %>
+	<%= link_to "Dodaj Post", new_post_path, method: :get %>
 
 <% else %>
 	<h1>Siema, nieznajomy!</h1>
