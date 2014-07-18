@@ -52,8 +52,8 @@ def make_sure_its_mine
 		true
 	end
 
-	private
-	def post_params
+private
+def post_params
 		params.require(:post).permit(:content, :title, :user_id)
 	end
 end
