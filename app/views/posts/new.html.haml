@@ -1,11 +1,31 @@
-%h1 Dodaj Post
-- if @post.errors.present?
-  - @post.errors.full_messages.each do |err|
-    %li= err
-= form_for(@post) do |f|
-  = f.label :title
-  = f.text_field :title
-  %br
-  = f.label :content
-  = f.text_area :content
-  = f.submit 'Dodaj!'
+-#%h1.text-center Dodaj Post
+-#- if @post.errors.present?
+-#- @post.errors.full_messages.each do |err|
+-#%li= err
+-#= form_for(@post) do |f|
+-#.form-group
+-#= f.label :title
+-#%label Enter Title
+-#= f.text_field :title
+-#.form-group
+-#= f.label :content
+-#%label Enter Post:
+-#= f.text_area :content
+-#= f.submit 'Dodaj!'
+
+.container
+	.w50.center-block
+		%h1.text-center Dodaj Post
+		- if @post.errors.present?
+			- @post.errors.full_messages.each do |err|
+				%li= err
+
+		= form_for(@post) do |f|
+			.form-group
+			= f.label :title
+			= f.text_field :title, class: "form-control"
+
+			.form-group
+			= f.label :content
+			= f.text_area :content, class: "form-control"
+			= f.submit 'Dodaj!', class: "btn btn-primary"
