@@ -10,5 +10,8 @@
 	-@post.comments.each do |comment|
 		%li
 			=comment.content
+			%br
 			dodał:
 			=comment.user.email
+			-#%br
+			-#= link_to "Modyfikuj", edit_comment_path(@post.comment.id), method: :get
