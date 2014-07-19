@@ -1,11 +1,16 @@
-%h1 Edytuj Post
-- if @post.errors.present?
-  - @post.errors.full_messages.each do |err|
-    %li= err
-= form_for(@post) do |f|
-  = f.label :title
-  = f.text_field :title
-  %br/
-  = f.label :content
-  = f.text_field :content
-  = f.submit 'Edytuj!'
+.container
+  .w50.center-block
+    %h1.text-center Edytuj Post
+    - if @post.errors.present?
+      - @post.errors.full_messages.each do |err|
+        %li= err
+
+    = form_for(@post) do |f|
+      .form-group
+      = f.label :title
+      = f.text_field :title, class: "form-control"
+      
+      .form-group
+      = f.label :content
+      = f.text_field :content, class: "form-control"
+      = f.submit 'Edytuj!', class: "btn btn-primary"
