@@ -1,13 +1,15 @@
 - if current_user
   .w50.center-block
     %h1.text-center
-      Siema, #{current_user.email}
-    %h1
+      Witaj, #{current_user.email}
+    %h1.small.text-center
       Twoje id to: #{current_user.id}
     %br/
-    = link_to "Wyloguj się", destroy_user_session_path, method: :delete
-    = link_to "Przejrzyj Posty", posts_path, method: :get
-    = link_to "Dodaj Post", new_post_path, method: :get
+    %br/
+    .h2.text-center
+      = link_to "Wyloguj się  |", destroy_user_session_path, method: :delete
+      = link_to "Przejrzyj Posty  |", posts_path, method: :get
+      = link_to "Dodaj Post", new_post_path, method: :get
 
 - else
   .w50.center-block
@@ -15,7 +17,7 @@
       Witaj, nieznajomy!
     .small.text-center
       Jeżeli chcesz podjąć jakąś akcję,
-      %br/ 
+      %br/
       = link_to "zarejstruj się", new_user_registration_path
       lub
       = link_to "zaloguj się", new_user_session_path

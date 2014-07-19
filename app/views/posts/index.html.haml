@@ -4,16 +4,17 @@
 	-@posts.each do |post|
 		%li
 			%h3=post.title
-			=link_to "Zobacz", post_path(post.id), method: :get
-			%br 
-			%b id: 
-			=post.id
-			%br
+			%br/
+			-#%b id: 
+			-#=post.id
+			-#%br
 			%b Dodał:
 			=post.user.email
-			%br
-			%b user id:
-			=post.user.id
+			%br/
+			=link_to "Zobacz", post_path(post.id), method: :get
+			-#%br
+			-#%b user id:
+			-#=post.user.id
 
 			-#=link_to "Edytuj", edit_post_path(post.id), method: :get
 			-#=link_to "Usuń", post_path(post.id), method: :delete

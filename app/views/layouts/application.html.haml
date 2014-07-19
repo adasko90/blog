@@ -5,10 +5,14 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+
     - if alert
       %p
-        Uwaga: #{alert}
+        .h4.text-center.color-red
+          Uwaga: #{alert}
     - elsif notice
       %p
-        Spokojnie: #{notice}
-    = yield
+        .h4.text-center.color-blue
+          Spokojnie: #{notice}
+
+    =yield
