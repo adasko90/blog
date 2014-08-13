@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :trackable, :validatable
 
-    validates :email, presence: true
+  validates :email, presence: true
 	validates :encrypted_password, presence: true
 
     has_many :comments
