@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
 
   validates :email, :encrypted_password, :nickname, presence: true
 
-
   has_many :comments
 	has_many :posts
 	
