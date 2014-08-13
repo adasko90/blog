@@ -9,7 +9,7 @@
 			-#=post.id
 			-#%br
 			%b Dodał:
-			=post.user.email
+			=post.user.nickname
 			%br/
 			=link_to "Zobacz", post_path(post.id), method: :get
 			-#%br
