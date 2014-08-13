@@ -1,41 +1,41 @@
 %h1 Lista Postów:
-
-%ul
-	-@posts.each do |post|
-		%li
-			%h3=post.title
-			%br/
-			-#%b id: 
-			-#=post.id
-			-#%br
-			%b Dodał:
-			=post.user.nickname
-			%br/
-			=link_to "Zobacz", post_path(post.id), method: :get
-			-#%br
-			-#%b user id:
-			-#=post.user.id
-
-			-#=link_to "Edytuj", edit_post_path(post.id), method: :get
-			-#=link_to "Usuń", post_path(post.id), method: :delete
-
-
-= link_to "Dodaj Post", new_post_path 
-= link_to "Home", root_path
-%br
-%br
-
--if current_user
-	%h1 Twoje Posty:
+.w30.center-block
 	%ul
-		-current_user.posts.each do |post|
+		-@posts.each do |post|
 			%li
 				%h3=post.title
-				%br 
-				%b id: 
-				=post.id
+				%br/
+				-#%b id: 
+				-#=post.id
+				-#%br
+				%b Dodał:
+				=post.user.nickname
+				%br/
 				=link_to "Zobacz", post_path(post.id), method: :get
-				=link_to "Edytuj", edit_post_path(post.id), method: :get
-				=link_to "Usuń", post_path(post.id), method: :delete
--else
-	%h2 Nie jesteś zalogowany.
+				-#%br
+				-#%b user id:
+				-#=post.user.id
+
+				-#=link_to "Edytuj", edit_post_path(post.id), method: :get
+				-#=link_to "Usuń", post_path(post.id), method: :delete
+
+
+	= link_to "Dodaj Post", new_post_path 
+	= link_to "Home", root_path
+	%br
+	%br
+
+	-if current_user
+		%h1 Twoje Posty:
+		%ul
+			-current_user.posts.each do |post|
+				%li
+					%h3=post.title
+					%br 
+					%b id: 
+					=post.id
+					=link_to "Zobacz", post_path(post.id), method: :get
+					=link_to "Edytuj", edit_post_path(post.id), method: :get
+					=link_to "Usuń", post_path(post.id), method: :delete
+	-else
+		%h2 Nie jesteś zalogowany.
